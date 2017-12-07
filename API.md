@@ -3,8 +3,6 @@
 ### Table of Contents
 
 -   [MapboxGenericGeocoder](#mapboxgenericgeocoder)
-    -   [query](#query)
-    -   [setInput](#setinput)
     -   [on](#on)
     -   [off](#off)
 
@@ -30,26 +28,6 @@ map.addControl(geocoder);
 ```
 
 Returns **[MapboxGenericGeocoder](#mapboxgenericgeocoder)** `this`
-
-### query
-
-Set & query the input
-
-**Parameters**
-
--   `searchInput` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** location name or other search input
-
-Returns **[MapboxGenericGeocoder](#mapboxgenericgeocoder)** this
-
-### setInput
-
-Set input
-
-**Parameters**
-
--   `searchInput` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** location name or other search input
-
-Returns **[MapboxGenericGeocoder](#mapboxgenericgeocoder)** this
 
 ### on
 

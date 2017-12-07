@@ -4,7 +4,6 @@
   "description": "A geocoder control for Mapbox GL JS that uses your custom geocoding api",
   "main": "lib/index.js",
   "scripts": {
-    "start": "budo example/index.js --live -- -t brfs ",
     "prepublish": "NODE_ENV=production && mkdir -p dist && browserify --standalone MapboxGenericGeocoder lib/index.js | uglifyjs -c -m > dist/mapbox-gl-generic-geocoder.min.js && cp lib/mapbox-gl-generic-geocoder.css dist/",
     "docs": "documentation build lib/index.js --format=md > API.md",
     "lint": "eslint lib"
