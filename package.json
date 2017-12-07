@@ -1,11 +1,11 @@
 {
-  "name": "mapbox-gl-nominatim-geocoder",
-  "version": "2.1.0",
-  "description": "A geocoder control for Mapbox GL JS that uses the nominatim geocoding api",
+  "name": "mapbox-gl-generic-geocoder",
+  "version": "1.0.0",
+  "description": "A geocoder control for Mapbox GL JS that uses a custom geocoding api",
   "main": "lib/index.js",
   "scripts": {
     "start": "budo example/index.js --live -- -t brfs ",
-    "prepublish": "NODE_ENV=production && mkdir -p dist && browserify --standalone MapboxNominatimGeocoder lib/index.js | uglifyjs -c -m > dist/mapbox-gl-nominatim-geocoder.min.js && cp lib/mapbox-gl-nominatim-geocoder.css dist/",
+    "prepublish": "NODE_ENV=production && mkdir -p dist && browserify --standalone MapboxGenericGeocoder lib/index.js | uglifyjs -c -m > dist/mapbox-gl-nominatim-geocoder.min.js && cp lib/mapbox-gl-nominatim-geocoder.css dist/",
     "test": "npm run lint && browserify -t envify test/index.js | smokestack -b firefox | tap-status",
     "docs": "documentation build lib/index.js --format=md > API.md",
     "lint": "eslint lib"
@@ -19,7 +19,6 @@
     "osm",
     "gl"
   ],
-  "author": "Mapbox",
   "license": "ISC",
   "devDependencies": {
     "brfs": "1.4.3",
@@ -37,7 +36,6 @@
     "uglify-js": "^2.6.4"
   },
   "dependencies": {
-    "jquery": "^3.2.1",
     "lodash.debounce": "^4.0.6",
     "mapbox": "1.0.0-beta5",
     "suggestions": "^1.3.1",
