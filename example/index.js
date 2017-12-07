@@ -39,22 +39,24 @@ var map = new mapboxgl.Map({
 });
 
 var geocodeNominatimRequest = function(query, mapBounds, options) {
-	const params = { format: "json", q: query, limit: options.limit };
-	const urlParams = new URLSearchParams(Object.entries(params));
+	var params = { format: "json", q: query, limit: options.limit };
+	var urlParams = new URLSearchParams(Object.entries(params));
 
-	return fetch("http://nominatim.openstreetmap.org/search?" + urlParams).then(function(results) {
-		if(results.length) {
-			return results.map(function(result) {
-				return {
-					name: result.display_name,
-					lat: result.lat,
-					lon: result.lon,
-					bbox: result.bbox
-				};
-			});
+	return fetch("http://nominatim.openstreetmap.org/search?" + urlParams).then(function(response) {
+		if(response.ok) {
+			return response.json();
 		} else {
 			return [];
 		}
+	}).then(function(json) {
+		return json.map(function(result) {
+			return {
+				name: result.display_name,
+				lat: result.lat,
+				lon: result.lon,
+				bbox: result.bbox
+			};
+		});
 	});
 };
 
