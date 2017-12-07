@@ -4,10 +4,10 @@ var insertCss = require('insert-css');
 var fs = require('fs');
 var $ = require("jquery");
 
-insertCss(fs.readFileSync('./lib/mapbox-gl-nominatim-geocoder.css', 'utf8'));
+insertCss(fs.readFileSync('./lib/mapbox-gl-generic-geocoder.css', 'utf8'));
 insertCss(fs.readFileSync('./node_modules/mapbox-gl/dist/mapbox-gl.css', 'utf8'));
 
-var MapboxNominatimGeocoder = require('../');
+var MapboxGenericGeocoder = require('../');
 
 
 var mapDiv = document.body.appendChild(document.createElement('div'));
@@ -39,7 +39,7 @@ var map = new mapboxgl.Map({
   zoom: 13
 });
 
-var geocoder = new MapboxNominatimGeocoder({});
+var geocoder = new MapboxGenericGeocoder({});
 
 window.geocoder = geocoder;
 
