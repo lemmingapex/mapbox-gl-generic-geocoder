@@ -25,15 +25,15 @@ var geocodeNominatimRequest = function(query, mapBounds, options) {
 	return fetch("http://nominatim.openstreetmap.org/search?" + urlParams).then(function(results) {
 		if(results.length) {
 			return results.map(function(result) {
-				{
+				return {
 					name: result.display_name,
 					lat: result.lat,
 					lon: result.lon,
 					bbox: result.bbox
-				}
+				};
 			});
 		} else {
-			return null;
+			return [];
 		}
 	});
 };

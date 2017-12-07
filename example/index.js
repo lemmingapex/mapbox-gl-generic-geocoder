@@ -9,7 +9,6 @@ insertCss(fs.readFileSync('./node_modules/mapbox-gl/dist/mapbox-gl.css', 'utf8')
 
 var MapboxGenericGeocoder = require('../');
 
-
 var mapDiv = document.body.appendChild(document.createElement('div'));
 mapDiv.style = 'position:absolute;top:0;right:0;left:0;bottom:0;';
 
@@ -39,7 +38,27 @@ var map = new mapboxgl.Map({
   zoom: 13
 });
 
-var geocoder = new MapboxGenericGeocoder({});
+var geocodeNominatimRequest = function(query, mapBounds, options) {
+	const params = { format: "json", q: query, limit: options.limit };
+	const urlParams = new URLSearchParams(Object.entries(params));
+
+	return fetch("http://nominatim.openstreetmap.org/search?" + urlParams).then(function(results) {
+		if(results.length) {
+			return results.map(function(result) {
+				return {
+					name: result.display_name,
+					lat: result.lat,
+					lon: result.lon,
+					bbox: result.bbox
+				};
+			});
+		} else {
+			return [];
+		}
+	});
+};
+
+var geocoder = new MapboxGenericGeocoder({}, geocodeNominatimRequest);
 
 window.geocoder = geocoder;
 
