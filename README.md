@@ -34,7 +34,7 @@ var geocodeNominatimRequest = function(query, mapBounds, options) {
 				name: result.display_name,
 				lat: result.lat,
 				lon: result.lon,
-				bbox: result.bbox
+				bbox: [result.boundingbox[2], result.boundingbox[0], result.boundingbox[3], result.boundingbox[1]]
 			};
 		});
 	});
