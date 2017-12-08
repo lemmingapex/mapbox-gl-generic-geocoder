@@ -18,7 +18,7 @@ A geocoder component using Mapbox Geocoding API
     -   `options.placeholder` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Override the default placeholder attribute value. (optional, default `"Search for Place or Address"`)
     -   `options.minLength` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Minimum number of characters to enter before results are shown. (optional, default `2`)
     -   `options.limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Maximum number of results to show. (optional, default `5`)
--   `geocodeRequest` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** A function that take a object containing the query text, current map bounds, and options.  It returns a promise with an array of result.  A result should look like something like this: { "name": "Denver", "lat": 39.742043, "lon": -104.991531, "bbox": ["39.6143154","39.9142087","-105.1098845","-104.5996889"]}
+-   `geocodeRequest` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** A function that take a object containing the query text, current map bounds, and options.  It returns a promise with an array of result.  A result should look like something like this: { "name": "Denver", "lat": 39.742043, "lon": -104.991531, "bbox": ["-105.1098845", "39.6143154","-104.5996889","39.9142087"]}
 
 **Examples**
 
