@@ -1,6 +1,6 @@
 {
   "name": "mapbox-gl-generic-geocoder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A geocoder control for Mapbox GL JS that uses your custom geocoding api",
   "main": "lib/index.js",
   "scripts": {
